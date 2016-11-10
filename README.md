@@ -1,10 +1,25 @@
-#TODO
+#Raspberry Pi Image Generator for events run by [{code} by Dell EMC](http://codedellemc.com)
 
-1. Documentation
+This repo will help you build a minimal Raspbian Jessie image with Docker included.
 
 #Dependencies
 
-`quilt kpartx realpath qemu-user-static debootstrap zerofree pxz zip`
+1. Linux machine
+or
+1. Vagrant
+2. VirtualBox
+
+If you're using a VM to build these images, I recommend the [Debian Jessie Vagrant box from ARTACK](https://atlas.hashicorp.com/ARTACK/boxes/debian-jessie)
+
+You need to have these tools installed:
+
+`quilt kpartx realpath qemu-user-static debootstrap zerofree pxz zip dosfstools`
+
+Install by running:
+```
+sudo apt-get update
+sudo apt-get install quilt kpartx realpath qemu-user-static debootstrap zerofree pxz zip dosfstools
+```
 
 #Config
 
@@ -33,9 +48,15 @@ A simple example for building Raspbian:
 IMG_NAME='Raspbian'
 ```
 
-#Stage Anatomy
+#Creating your own image
 
+1. Clone this directory onto your Linux machine/VM
+2. Create a `config` file (see above)
+3. Run `sudo ./build.sh`
+4. Wait for the process to finish
+5. Copy the new image to your Raspberry Pi SD card
 
+That's all there is to it! Enjoy your new custom Docker-ready Raspberry Pi image.
 
 #Raspbian Stage Overview
 
@@ -75,12 +96,12 @@ maintenance and allows for more easy customization.
    you were looking for something between truly minimal and Raspbian-lite,
    here's where you start trimming.
 
- - Stage 3, desktop system.  Here's where you get the full desktop system
+ - Stage 3, desktop system. **Not used here**. Here's where you get the full desktop system
    with X11 and LXDE, web browsers, git for development, Raspbian custom UI
    enhancements, etc.  This is a base desktop system, with some development
    tools installed.
 
- - Stage 4, complete Raspbian system.  More development tools, an email
+ - Stage 4, complete Raspbian system. **Not used here**. More development tools, an email
    client, learning tools like Scratch, specialized packages like sonic-pi and
    wolfram-engine, system documentation, office productivity, etc.  This is
    the stage that installs all of the things that make Raspbian friendly to
