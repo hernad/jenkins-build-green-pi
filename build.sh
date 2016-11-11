@@ -165,7 +165,7 @@ dependencies_check ${BASE_DIR}/depends
 mkdir -p ${WORK_DIR}
 log "Begin ${BASE_DIR}"
 
-for STAGE_DIR in ${BASE_DIR}/stage*; do
+for STAGE_DIR in ${BASE_DIR}/stage[0-2]; do
 	run_stage
 done
 
@@ -175,10 +175,10 @@ for EXPORT_DIR in ${EXPORT_DIRS}; do
 	IMG_SUFFIX=$(cat ${EXPORT_DIR}/EXPORT_IMAGE)
 	EXPORT_ROOTFS_DIR=${WORK_DIR}/$(basename ${EXPORT_DIR})/rootfs
 	run_stage
-	if [ -e ${EXPORT_DIR}/EXPORT_NOOBS ]; then
-		STAGE_DIR=${BASE_DIR}/export-noobs
-		run_stage
-	fi
+#	if [ -e ${EXPORT_DIR}/EXPORT_NOOBS ]; then
+#		STAGE_DIR=${BASE_DIR}/export-noobs
+#		run_stage
+#	fi
 done
 
 log "End ${BASE_DIR}"
