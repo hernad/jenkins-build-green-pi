@@ -17,3 +17,6 @@ usb-modeswitch
 pppoeconf
 tftp-hpa
 apt-transport-https ca-certificates
+vim
+dnsmasq
+rsync
