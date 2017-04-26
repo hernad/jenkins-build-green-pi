@@ -13,5 +13,5 @@ vagrant provision
 
 cd ..
 
-mv vagrant/`date +%Y-%M-%d`-green-pi-lite.img   ..
+mv vagrant/`date +%Y-%M-%d`-green-pi-lite.img   .
 
