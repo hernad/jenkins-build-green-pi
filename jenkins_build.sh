@@ -1,5 +1,4 @@
 #!/bin/bash
 
-IMG_NAME="green-pi"
 
-sudo ./build.sh
+sudo IMG_NAME="green-pi" ./build.sh
