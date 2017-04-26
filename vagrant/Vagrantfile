@@ -44,6 +44,7 @@ Vagrant.configure("2") do |config|
      cd pi-gen
      echo "IMG_NAME='green-pi'" > config
      sudo ./build.sh
+     cp -av /home/vagrant/pi-gen/work/2017-04-26-green-pi/export-image/2017-04-26-green-pi-lite.img /vagrant/
   SHELL
 
 end

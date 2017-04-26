@@ -8,3 +8,4 @@ then
 fi
 vagrant init ARTACK/debian-jessie
 vagrant up
+vagrant provision
