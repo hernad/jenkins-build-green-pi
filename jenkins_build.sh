@@ -1,5 +1,5 @@
 #!/bin/bash
 
-IMG_NAME='green-pi'
+IMG_NAME="green-pi"
 
 ./build.sh
