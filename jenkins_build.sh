@@ -9,3 +9,9 @@ fi
 vagrant init ARTACK/debian-jessie
 vagrant up
 vagrant provision
+
+
+cd ..
+
+mv vagrant/`date +%Y-%M-%d`-green-pi-lite.img   ..
+
