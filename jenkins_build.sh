@@ -2,4 +2,4 @@
 
 IMG_NAME="green-pi"
 
-./build.sh
+sudo ./build.sh
